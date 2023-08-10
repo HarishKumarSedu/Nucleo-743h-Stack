@@ -1,5 +1,5 @@
 /**
- * @file main.cpp
+ * @file gpio.h
  * @author Harish Kumar Shivaramappa (harishkumarsedu@gmail.com)
  * @brief 
  * @version 0.1
@@ -9,8 +9,12 @@
  * 
  */
 
+
+#ifndef GPIO_H
+#define GPIO_H
+
 #include "stm32h743.h"
-// #include "gpio.h"
+
 #define GREEN_LED 0 // PB0
 #define RED_LED 14 // PB14
 
@@ -18,20 +22,4 @@
 void LED_Configure(uint8_t LED);
 void LED_Toggle(uint8_t LED);
 
-int main()
-{
-    
-  LED_Configure(RED_LED);
-
-	while(1)
-	{
-
-    LED_Toggle(RED_LED);
-
-    for (uint32_t i = 0; i < 1000000000; i++);
-    
-  }
-  
-  
-  return 0 ;
-}
+#endif
